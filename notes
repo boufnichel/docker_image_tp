@@ -1,0 +1,10 @@
+sudo docker pull nginx
+sudo docker run --name nginx-template-base -p 8080:80 -e TERM=xterm -d nginx
+sudo docker exec -it -w /usr <Container_id> bash
+# do some changes then exit
+docker commit <Container_id>  registry/image:label
+
+# edit container from externe
+docker commit --change 'CMD ["echo", "Salamo3alaykom !"]' <Container_id>  registry/image:label
+
+# utils
